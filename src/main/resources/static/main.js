@@ -1,5 +1,7 @@
 alert('Download page');
 
+//METHOD: DELETE
+//delete user by id
 function deleteUser(id) {
     fetch('http://localhost:8080/delete/' + id, {
         method: 'DELETE',
@@ -10,6 +12,8 @@ function deleteUser(id) {
         });
 }
 
+//METHOD: PUT
+//update user
 function editUser() {
 
     let form = window.formEditUser.editRoles;
@@ -57,6 +61,7 @@ function editUser() {
         });
 }
 
+//method to get user delete modal
 function getModalDelete(id) {
 
     fetch('http://localhost:8080/getUserById/' + id)
@@ -142,6 +147,7 @@ function getModalDelete(id) {
         });
 }
 
+//method to get user edit modal
 function getModalEdit(id) {
 
     fetch('http://localhost:8080/getUserById/' + id)
@@ -237,6 +243,7 @@ function getModalEdit(id) {
         });
 }
 
+//method to get users roles list
 function listRoles(user) {
     let rolesList = document.createElement('ul');
 
@@ -249,6 +256,8 @@ function listRoles(user) {
     return rolesList;
 }
 
+//METHOD: POST
+//method to add new user
 function newUser() {
     let form = window.formNewUser.newRoles;
     let new_Roles = "";
@@ -301,6 +310,7 @@ function newUser() {
         });
 }
 
+//method to get users list
 showAllUsers();
 
 function showAllUsers() {
@@ -336,6 +346,7 @@ function showAllUsers() {
         });
 }
 
+//method to get users roles to header
 showHeader();
 
 function showHeader() {
@@ -356,6 +367,8 @@ function showHeader() {
         });
 }
 
+
+//method to get info about authorized user
 showUserInfo();
 
 function showUserInfo(user) {
